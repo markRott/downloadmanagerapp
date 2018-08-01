@@ -7,7 +7,10 @@ import app.com.downlod.MainActivity;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {ApplicationModule.class, NotificationModule.class})
+@Component(modules = {
+        ApplicationModule.class,
+        NotificationModule.class,
+        DownloadManagerModule.class})
 public interface MainAppComponent {
 
     void inject(DownloadFileService downloadFileService);

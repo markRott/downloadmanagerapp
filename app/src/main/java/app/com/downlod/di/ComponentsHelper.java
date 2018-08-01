@@ -13,6 +13,7 @@ public class ComponentsHelper {
         if (mainAppComponent != null) return mainAppComponent;
         return mainAppComponent = DaggerMainAppComponent.builder()
                 .applicationModule(new ApplicationModule(application))
+                .downloadManagerModule(new DownloadManagerModule())
                 .notificationModule(new NotificationModule())
                 .build();
 //        return null;

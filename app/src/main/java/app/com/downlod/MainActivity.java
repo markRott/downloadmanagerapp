@@ -2,15 +2,11 @@ package app.com.downlod;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
@@ -38,9 +34,13 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
     Button btnStartDownloadFile;
     TextView tvCurrentDownloadState;
+    Button btnDownloadManager;
 
     @Inject
     RxBus rxBus;
+    @Inject
+    DownloadManagerInteractor downloadManagerInteractor;
+
     private CompositeDisposable compositeDisposable;
 
     @Override
@@ -90,19 +90,6 @@ public class MainActivity extends AppCompatActivity {
                         fileModel.getTotalFileSize()));
     }
 
-    private void initViews() {
-        progressBar = findViewById(R.id.progress);
-        tvCurrentDownloadState = findViewById(R.id.progress_text);
-        btnStartDownloadFile = findViewById(R.id.btn_download);
-        btnStartDownloadFile.setOnClickListener(v -> {
-            if (checkPermission()) {
-                startDownload();
-            } else {
-                requestPermission();
-            }
-        });
-    }
-
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         return result == PackageManager.PERMISSION_GRANTED;
@@ -130,5 +117,28 @@ public class MainActivity extends AppCompatActivity {
         final Intent intent = new Intent(this, DownloadFileService.class);
         intent.putExtra(DownloadFileService.ARGS_FILE_URL, FILE_URL);
         startService(intent);
+    }
+
+    private void initViews() {
+        progressBar = findViewById(R.id.progress);
+        tvCurrentDownloadState = findViewById(R.id.progress_text);
+        btnStartDownloadFile = findViewById(R.id.btn_download);
+        btnDownloadManager = findViewById(R.id.btn_download_manager);
+
+        btnStartDownloadFile.setOnClickListener(v -> {
+            if (checkPermission()) {
+                startDownload();
+            } else {
+                requestPermission();
+            }
+        });
+
+        btnDownloadManager.setOnClickListener(v -> {
+            if (checkPermission()) {
+                downloadManagerInteractor.downloadFile();
+            } else {
+                requestPermission();
+            }
+        });
     }
 }
