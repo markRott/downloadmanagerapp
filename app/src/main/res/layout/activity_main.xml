@@ -3,58 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
-    <LinearLayout
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_download"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="vertical"
-        tools:context="com.learn2crack.filedownload.MainActivity">
+        android:background="@color/colorPrimary"
+        android:text="Download by intentService"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_download"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="Download by intentService"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
-
-        <ProgressBar
-            android:id="@+id/progress"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
-
-        <TextView
-            android:id="@+id/progress_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            tools:text="Download 14 MB" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="vertical"
-        tools:context="com.learn2crack.filedownload.MainActivity">
+        android:layout_marginTop="10dp" />
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_download_manager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="Download by android DownloadManager"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/progress_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        tools:text="Download 14 MB" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_download_manager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        android:text="Download by android DownloadManager"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

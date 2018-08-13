@@ -1,4 +1,4 @@
-package app.com.downlod;
+package app.com.downlod.interactors;
 
 import android.app.DownloadManager;
 

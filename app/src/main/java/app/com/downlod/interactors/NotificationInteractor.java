@@ -1,8 +1,10 @@
-package app.com.downlod;
+package app.com.downlod.interactors;
 
 import android.app.NotificationManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
+
+import app.com.downlod.DownloadFileModel;
 
 public class NotificationInteractor {
 

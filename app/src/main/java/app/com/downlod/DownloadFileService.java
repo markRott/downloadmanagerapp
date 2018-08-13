@@ -19,6 +19,9 @@ import java.util.Objects;
 import javax.inject.Inject;
 
 import app.com.downlod.di.ComponentsHelper;
+import app.com.downlod.interactors.NotificationInteractor;
+import app.com.downlod.utils.RxBus;
+import app.com.downlod.utils.StringUtils;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 

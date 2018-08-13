@@ -1,4 +1,4 @@
-package app.com.downlod;
+package app.com.downlod.ui;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -17,7 +17,12 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import app.com.downlod.DownloadFileModel;
+import app.com.downlod.DownloadFileService;
+import app.com.downlod.R;
 import app.com.downlod.di.ComponentsHelper;
+import app.com.downlod.interactors.DownloadManagerInteractor;
+import app.com.downlod.utils.RxBus;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;

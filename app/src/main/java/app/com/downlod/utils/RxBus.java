@@ -1,4 +1,4 @@
-package app.com.downlod;
+package app.com.downlod.utils;
 
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;

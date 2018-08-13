@@ -6,7 +6,7 @@ import javax.inject.Singleton;
 
 import app.com.downlod.DownloadFileApi;
 import app.com.downlod.MyApp;
-import app.com.downlod.RxBus;
+import app.com.downlod.utils.RxBus;
 import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;

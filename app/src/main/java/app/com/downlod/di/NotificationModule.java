@@ -6,7 +6,7 @@ import android.support.v4.app.NotificationCompat;
 
 import javax.inject.Singleton;
 
-import app.com.downlod.NotificationInteractor;
+import app.com.downlod.interactors.NotificationInteractor;
 import app.com.downlod.R;
 import dagger.Module;
 import dagger.Provides;

@@ -7,8 +7,8 @@ import android.os.Environment;
 
 import javax.inject.Singleton;
 
-import app.com.downlod.DownloadManagerInteractor;
-import app.com.downlod.StringUtils;
+import app.com.downlod.interactors.DownloadManagerInteractor;
+import app.com.downlod.utils.StringUtils;
 import dagger.Module;
 import dagger.Provides;
 
